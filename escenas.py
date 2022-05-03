@@ -147,7 +147,7 @@ class Supervivencia(Escena):
     def verificar_completado(self):
         if self.por_venir[Zombie] == 0 and len(self.atacantes) == 0:
             self.banderas += 1
-            print "se acabo una oleada"
+            print ("se acabo una oleada")
             self.establecer_enemigos()
             self.intervalo_zombie = random.randint(18, 20)
             self.crono_i_z = engine.pygame.time.get_ticks()
@@ -259,7 +259,7 @@ class Supervivencia(Escena):
             if self.cuadro_lampa: self.cuadro_lampa.verificar_eventos(evento)
         else:
             self.menu_pausa.verificar_eventos(evento)
-    def plantar(self, (x , y)):
+    def plantar(self, x , y):
         i = (y - 120) / 104
         j = (x - 50) / 100
         if 0 <= i <= 5 and 0 <= j <= 8:
