@@ -387,7 +387,7 @@ class CuadroCreacion(object):
             n = (self.entrada.text,)
             cursor.execute("select * from usuario where nombre = ?", (self.entrada.text,))
             if cursor.fetchall() != []:
-                print "Ya existe un usuario con ese nombre,elija otro"
+                print ("Ya existe un usuario con ese nombre,elija otro")
             else:
                 cursor.execute("insert into usuario values (null,?,0)", n)
                 cursor.execute("insert into sesion values (null,last_insert_rowid(),?)", (str(datetime.now()),))
@@ -638,7 +638,7 @@ class PlantaSeleccionada(object):
         for fila in engine.obtener_director().escena_actual.tablero:
             for p in fila:
                 if p and p.__class__ == self.carta.clase.base:
-                    print "encontre una base"
+                    print ("encontre una base")
 
 class Carta(object):
     def __init__(self, rect_origen, cls, nombre, descripcion, precio, campo, tipo, tiempo_charge = 3, base = None):
